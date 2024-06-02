@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="./resources/images/fav.ico" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="./resources/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* 브라우저 마진과 패딩 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* INPUT 가리기 */
+        .section [id*="slide"] {
+            display: none;
+        }
+
+        /* 슬라이드 영역 - max-width 크기를 조절해주면 됩니다*/
+        .section .slidewrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section .slidelist {
+            white-space: nowrap;
+            font-size: 0;
+        }
+
+            .section .slidelist > li {
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+                transition: all .5s;
+            }
+
+                .section .slidelist > li > a {
+                    display: block;
+                    position: relative;
+                }
+
+        /* 좌우로 넘기는 LABEL버튼에 대한 스타일 */
+        .section .slide-control {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+        }
+
+            .section .slide-control label {
+                position: absolute;
+                z-index: 1;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 50px;
+                cursor: pointer;
+            }
+
+            .section .slide-control .left {
+                left: 30px;
+                background: url('./img/left.png') center center / 100% no-repeat;
+            }
+
+            .section .slide-control .right {
+                right: 30px;
+                background: url('./img/right.png') center center / 100% no-repeat;
+            }
+
+            .section .slide-control [class*="control"] {
+                display: none;
+            }
+
+        /* INPUT이 체크되면 변화값이 li까지 전달되는 스타일 */
+        .section [id="slide01"]:checked ~ .slidewrap .slidelist > li {
+            transform: translateX(0%);
+        }
+
+        .section [id="slide02"]:checked ~ .slidewrap .slidelist > li {
+            transform: translateX(-100%);
+        }
+
+        .section [id="slide03"]:checked ~ .slidewrap .slidelist > li {
+            transform: translateX(-200%);
+        }
+
+        /*  INPUT이 체크되면 변화값이 좌우 슬라이드 버튼을 담고 있는 div 까지 전달되는 스타일 */
+        .section [id="slide01"]:checked ~ .slidewrap .control01 {
+            display: block;
+        }
+
+        .section [id="slide02"]:checked ~ .slidewrap .control02 {
+            display: block;
+        }
+
+        .section [id="slide03"]:checked ~ .slidewrap .control03 {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <title>침착맨 톺아보기</title>
+    <header>
+        <nav class='bar'>
+            <div class="left">
+                <img src="./resources/images/logo.jpeg" />
+                <a onClick="window.location.reload()"><strong>침착맨 </strong>톺아보기</a>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="https://chimhaha.net/"target='_blank'><img src="./resources/images/chh.jpg" /></a></li>
+                       
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="a">
+        <img src="./resources/images/banner_kg.jpg" />
+        <div class="banner">
+            <p class='bold'>만화가 이병건을 톺아보세요.</p>
+            <h5></h5>
+            <div class="button1">
+                <a href="https://www.youtube.com/@ChimChakMan_Plus" target='_blank'>재밌는 게임 영상은? 침착맨 플러스</a>
+            </div>
+            <div class="button2">
+                <a href="
+https://www.youtube.com/@ChimChakMan_Data" target='_blank'>도란도란 생방송은? 침착맨 원본 박물관</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="b">
+        <div class="bleft">
+            <div class="bimg">
+                <img src="./resources/images/배너.jpg" />
+            </div>
+            <p>'반갑습니다. 오늘도 즐거운 날입니다.'</p>
+            <h5></br>@ChimChakMan_Official·구독자 246만명·동영상 7천개</h5>
+        </div>
+        <div class="bright">
+            <div class="box">
+                <img src="./resources/images/01_본채널.png" />
+                <div>
+                    <h3>　</h3>
+                    <h3>침착맨 유튜브</h3>
+                    <p></p>
+                    <a href="https://www.youtube.com/@ChimChakMan_Official"><h6></br></br></br></br></br>이동하기</h6></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./resources/images/02_플러스.png" />
+                <div>
+                    <h3>　</h3>
+                    <h3>침착맨 플러스</h3>
+                    <p></p>
+                    <a href="https://www.youtube.com/@ChimChakMan_Plus"><h6></br></br></br></br></br>이동하기</h6></a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./resources/images/03_원본박물관.png" />
+                <div>
+                    <h3>　</h3>
+                    <h3>침착맨 원본 박물관</h3>
+                    <p></p>
+                    <a href="https://www.youtube.com/channel/UCewitUbsXnyjvJjGgxa0IYw"><h6></br></br></br></br></br>이동하기</h6></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="c">
+
+        <div class="start">
+            <h2>최다 시청 유튜브</h2>
+        </div>
+
+        <div class="menu1">
+            <div class="card">
+                <img src="./resources/images/a.jpg" />
+                <div class="exp">
+                    <h4>유사과학월드컵(이과답답주의)</h4>
+                    <p>조회수 2011만회</p>
+                    <a href="https://youtu.be/Z7_WWJEj-j8?si=u2DqAgouEbaozH_d"><p>>감상하기</p></a>
+                </div>
+
+            </div>
+            <div class="card">
+                <img src="./resources/images/b.jpg" />
+                <div class="exp">
+                    <h4>침착맨 삼국지 완전판</h4>
+                    <p>조회수 1949만회</p>
+                    <a href="https://youtu.be/hnanNlDbsE4?si=mPsNuEgmVxZAeBx0"><p>>감상하기</p></a>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <img src="./resources/images/c.jpg" />
+                <div class="exp">
+                    <h4>쉽게 질리는 음식 월드컵</h4>
+                    <p>조회수 695만회</p>
+                    <a href="https://youtu.be/LOuy_4lrauM?si=kEtWvv-XODXYEH5S"><p>>감상하기</p></a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="menu2">
+            <div class="card">
+                <img src="./resources/images/e.jpg" />
+                <div class="exp">
+                    <h4>딱딱복숭아 vs 물렁복숭아</h4>
+                    <p>조회수 686만회</p>
+                    <a href="https://youtu.be/9LQsLPsKRq8?si=UxcHC7L4auycZIKn"><p>>감상하기</p></a>
+                </div>
+
+            </div>
+            <div class="card">
+                <img src="./resources/images/g.jpg" />
+                <div class="exp">
+                    <h4>음모론 & 미스터리 월드컵</h4>
+                    <p>조회수 677만회</p>
+                    <a href="https://youtu.be/qRUxCTEtKMI?si=1tcleF67h3KRpLxE"><p>>감상하기</p></a>
+                </div>
+
+            </div>
+            <div class="card">
+                <img src="./resources/images/f.jpg" />
+                <div class="exp">
+                    <h4>시청자 방 훈수하기</h4>
+                    <p>조회수 640만회</p>
+                    <a href="https://youtu.be/Uepu0fO--9E?si=lAjq6__2hYU0CDlP"><p>>감상하기</p></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="bstart">
+        <h2>침착맨 굿즈</h2>
+    </div>
+
+    <div class="b">
+
+
+
+        <div class="bleft">
+            <div class="section">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+                <div class="slidewrap">
+                    <ul class="slidelist">
+                        <li>
+                            <a>
+                                <img src="./img/slide01.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="./img/slide02.jpg">
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <img src="./img/slide03.jpg">
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="slide-control">
+                        <div class="control01">
+                            <label for="slide03" class="left"></label>
+                            <label for="slide02" class="right"></label>
+                        </div>
+                        <div class="control02">
+                            <label for="slide01" class="left"></label>
+                            <label for="slide03" class="right"></label>
+                        </div>
+                        <div class="control03">
+                            <label for="slide02" class="left"></label>
+                            <label for="slide01" class="right"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>'침착맨 공식 굿즈샵'</h2>
+            <span>
+                </br>우측 상단의 배너를 확인해주세요.
+                </br>
+            </span>
+        </div>
+        <div class="bright">
+            <div class="box">
+                <img src="./resources/images/thesis-fisma.jpg" />
+                <div>
+                    <a href="https://sandbox.marpple.shop/kr/calmdownman/products/13909888"><h3>침착 옐로우 장패드</h3></a>
+                    <p>장패드<br />￦ 22,000</p>
+                    
+
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="./resources/images/thesis-now-and-then.jpg" />
+                <div>
+                    <a href="https://sandbox.marpple.shop/kr/calmdownman/products/15532876"><h3>침착 레몬맨 슬리퍼(화이트)</h3></a>
+                    <p>패션잡화>슬리퍼<br />￦ 30,000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>ⓒ 2022 Cho Han Seong Fighting. All rights reserved</p>
+        <div class="fd">
+            <ul>
+                <li>Terms</li>
+                <li>Privacy</li>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+</html>
